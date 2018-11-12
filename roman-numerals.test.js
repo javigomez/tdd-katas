@@ -2,7 +2,15 @@
 function convert(number) {
     romanNumber = ''
 
-    if (number == 5 ) {
+    while (number >= 10 ) {
+        romanNumber += 'X'
+        number = number -10      
+    }
+    if (number == 9 ) {
+        romanNumber += 'IX'
+        number = number -9        
+    }
+    if (number >= 5 ) {
         romanNumber += 'V'
         number = number -5      
     }
@@ -10,7 +18,7 @@ function convert(number) {
         romanNumber += 'IV'
         number = number -4        
     }
-    while(number > 0 && number < 3) {
+    while(number > 0 && number <= 3) {
         romanNumber += 'I'
         number--
     }
@@ -23,4 +31,8 @@ test('convert: given an arabic number translates it to roman number', () => {
     expect(convert(2)).toBe('II')
     expect(convert(4)).toBe('IV')
     expect(convert(5)).toBe('V')
+    expect(convert(6)).toBe('VI')
+    expect(convert(9)).toBe('IX')
+    expect(convert(11)).toBe('XI')
+    expect(convert(28)).toBe('XXVIII')
 })
