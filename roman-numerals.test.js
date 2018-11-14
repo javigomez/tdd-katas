@@ -6,19 +6,19 @@ function convert(number) {
         romanNumber += 'X'
         number = number -10      
     }
-    if (number == 9 ) {
+    while (number >= 9 ) {
         romanNumber += 'IX'
         number = number -9        
     }
-    if (number >= 5 ) {
+    while (number >= 5 ) {
         romanNumber += 'V'
         number = number -5      
     }
-    if (number == 4 ) {
+    while (number >= 4 ) {
         romanNumber += 'IV'
         number = number -4        
     }
-    while(number > 0 && number <= 3) {
+    while(number >= 1) {
         romanNumber += 'I'
         number--
     }
