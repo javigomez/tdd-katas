@@ -14,9 +14,12 @@ class Game {
 }
 
 test('When I roll 10 times throwing 1 pin each', () => {
-    const aGame = new Game()
-    for(var i = 0; i < 10; i++) {
-        aGame.roll(1)
+    const rollit = (game, rollTimes, Throwing) => {
+        for(var i = 0; i < rollTimes; i++) {
+            game.roll(Throwing)
+        }
     }
+    const aGame = new Game()
+    rollit(aGame, 10, 1)
     expect(aGame.score()).toBe(10)
 })
